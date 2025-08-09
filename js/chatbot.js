@@ -162,20 +162,31 @@ class Chatbot {
                 await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 1000)); // Simulate delay
                 botResponse = this.getFallbackResponse(message);
             } else {
-                // Server mode - call API
+                // Server mode - call API with timeout and better error handling
+                console.log('Sending request to backend:', this.apiUrl);
+                
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+                
                 const response = await fetch(this.apiUrl, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ message: message })
+                    body: JSON.stringify({ message: message }),
+                    signal: controller.signal
                 });
 
+                clearTimeout(timeoutId);
+
+                console.log('Response status:', response.status);
+                
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
 
                 const data = await response.json();
+                console.log('Response data:', data);
                 botResponse = data.response || 'Sorry, I encountered an error. Please try again.';
             }
             
@@ -191,8 +202,23 @@ class Chatbot {
             // Remove typing indicator
             this.hideTypingIndicator();
             
-            // Add fallback response
-            this.addMessage(this.getFallbackResponse(message), 'bot');
+            // Determine error type and show appropriate message
+            let errorMessage;
+            if (error.name === 'AbortError') {
+                errorMessage = "Request timed out. The backend might be starting up (this can take 30-60 seconds on free hosting). Please try again.";
+            } else if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+                errorMessage = "Network error. Please check your connection and try again.";
+            } else {
+                errorMessage = "I'm having trouble connecting to my backend. Let me use my offline knowledge instead.";
+            }
+            
+            // Add error-specific response
+            this.addMessage(errorMessage, 'bot');
+            
+            // After a brief delay, add a fallback response
+            setTimeout(() => {
+                this.addMessage(this.getFallbackResponse(message), 'bot');
+            }, 1000);
         } finally {
             // Re-enable send button
             this.chatbotSend.disabled = false;
@@ -238,31 +264,39 @@ class Chatbot {
         
         // Simple keyword-based responses
         if (lowerMessage.includes('experience') || lowerMessage.includes('work')) {
-            return "Akshay has 7.5+ years of experience in AI, data science, and software engineering. He's worked across various domains including healthcare, finance, and technology innovation. You can find detailed information in the Experience section above.";
+            return "Akshay has 7.5+ years of experience in AI, data science, and software engineering. He's currently working as a Software Engineer at Propylon in Dublin, Ireland, where he develops conversational RAG systems using LangGraph and Claude Sonnet LLM. Previously, he worked at companies like GS Lab and Cognizant, focusing on AI/ML projects, network security, and data science solutions.";
         }
         
         if (lowerMessage.includes('skill') || lowerMessage.includes('technology')) {
-            return "Akshay is proficient in AI/ML frameworks, Python, JavaScript, cloud platforms, and data science tools. Check out the Skills section to see his complete technical expertise.";
+            return "Akshay is proficient in Python, TensorFlow, PyTorch, LangGraph, AWS, Docker, and many other AI/ML technologies. He specializes in building RAG systems, computer vision, NLP, and cloud deployments. Check out the Skills section above to see his complete technical expertise.";
         }
         
         if (lowerMessage.includes('project') || lowerMessage.includes('portfolio')) {
-            return "Akshay has worked on various AI and software projects, from machine learning models to full-stack applications. Explore the Projects section to see his work.";
+            return "Akshay has worked on fascinating projects including: ML Framework for Empathy Prediction using eye-tracking (89% accuracy), Free Canvas AR Drawing Tool for children, Agentic Chatbot Assistant, and a Snake Game with Random Forest AI. He's also built production RAG systems and network intrusion detection systems.";
         }
         
         if (lowerMessage.includes('contact') || lowerMessage.includes('reach') || lowerMessage.includes('hire')) {
-            return "You can reach Akshay through the contact information provided in the Contact section. He's open to discussing AI projects, collaborations, and opportunities.";
+            return "You can reach Akshay at akshaysayar@gmail.com or call +353 89 966 6388. He's based in Dublin, Ireland and is open to discussing AI projects, collaborations, and opportunities. You can also connect with him on LinkedIn or GitHub.";
         }
         
         if (lowerMessage.includes('education') || lowerMessage.includes('study')) {
-            return "Akshay has a strong educational background in technology and continues to learn cutting-edge AI and software development techniques. His learning journey is reflected in his diverse project portfolio.";
+            return "Akshay has a Master of Science in Data Analytics from National College of Ireland (First Class Honors, Dean's List) and a Bachelor of Engineering in Mechanical Engineering from University of Pune (First Class with Distinction). He's a continuous learner who stays updated with the latest AI and technology trends.";
         }
 
         if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
-            return "Hello! I'm here to help you learn more about Akshay Sayar. Feel free to ask about his experience, skills, projects, or how to get in touch with him.";
+            return "Hello! I'm Akshay's AI assistant. I can help you learn more about his 7.5+ years of experience in AI engineering, data science, and software development. Feel free to ask about his work at Propylon, his AI projects, technical skills, or how to get in touch!";
+        }
+
+        if (lowerMessage.includes('propylon') || lowerMessage.includes('current') || lowerMessage.includes('job')) {
+            return "Akshay currently works as a Software Engineer at Propylon in Dublin, Ireland (Nov 2022 - July 2025). He develops conversational RAG systems using LangGraph and Claude Sonnet LLM, designs custom indexing algorithms with OpenSearch, and has mentored Trinity College students for 3 years. He also volunteers teaching programming to children.";
+        }
+
+        if (lowerMessage.includes('ai') || lowerMessage.includes('machine learning') || lowerMessage.includes('ml')) {
+            return "Akshay is an AI/ML expert with experience in building production systems like conversational RAG with LangGraph, computer vision models (YOLO V5), NLP systems, and time series forecasting. He's worked on empathy prediction using eye-tracking, network intrusion detection, and IoT anomaly detection systems.";
         }
         
         // Default response
-        return "I'm currently offline, but I'd love to help you learn more about Akshay! You can ask me about his experience, skills, projects, or contact information. Meanwhile, feel free to explore his portfolio above.";
+        return "I'm here to help you learn more about Akshay Sayar! You can ask me about his experience, skills, projects, education, or how to contact him. Try asking about his work at Propylon, his AI projects, or his technical expertise.";
     }
 }
 
