@@ -5,6 +5,7 @@ class Chatbot {
         this.apiUrl = 'https://akshay-cv-backend.onrender.com/chat'; // Only used if isStatic = false
         this.isOpen = false;
         this.arrowShown = true;
+        console.log('🤖 Chatbot initialized with backend URL:', this.apiUrl);
         this.init();
         this.initArrow();
     }
@@ -142,6 +143,9 @@ class Chatbot {
         const message = this.chatbotInput.value.trim();
         if (!message) return;
 
+        console.log('💬 Sending message:', message);
+        console.log('🔧 Using static mode:', this.isStatic);
+
         // Clear input
         this.chatbotInput.value = '';
         
@@ -163,11 +167,16 @@ class Chatbot {
                 botResponse = this.getFallbackResponse(message);
             } else {
                 // Server mode - call API with timeout and better error handling
-                console.log('Sending request to backend:', this.apiUrl);
+                console.log('🚀 Sending request to backend:', this.apiUrl);
+                console.log('📦 Request payload:', { message: message });
                 
                 const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+                const timeoutId = setTimeout(() => {
+                    console.log('⏰ Request timeout triggered after 30 seconds');
+                    controller.abort();
+                }, 30000); // 30 second timeout
                 
+                console.log('📡 Making fetch request...');
                 const response = await fetch(this.apiUrl, {
                     method: 'POST',
                     headers: {
@@ -178,22 +187,37 @@ class Chatbot {
                 });
 
                 clearTimeout(timeoutId);
-
-                console.log('Response status:', response.status);
+                console.log('📥 Response received!');
+                console.log('📊 Response status:', response.status);
+                console.log('📋 Response headers:', Object.fromEntries(response.headers.entries()));
                 
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    const errorText = await response.text();
+                    console.log('❌ Error response body:', errorText);
+                    throw new Error(`HTTP error! status: ${response.status}, body: ${errorText}`);
                 }
 
-                const data = await response.json();
-                console.log('Response data:', data);
-                botResponse = data.response || 'Sorry, I encountered an error. Please try again.';
+                // Try to parse as JSON first, fall back to plain text
+                const contentType = response.headers.get('content-type');
+                console.log('📋 Content-Type:', contentType);
+                
+                if (contentType && contentType.includes('application/json')) {
+                    // Response is JSON
+                    const data = await response.json();
+                    console.log('✅ JSON Response data:', data);
+                    botResponse = data.response || data.message || 'Sorry, I encountered an error. Please try again.';
+                } else {
+                    // Response is plain text
+                    botResponse = await response.text();
+                    console.log('✅ Plain text response:', botResponse);
+                }
             }
             
             // Remove typing indicator
             this.hideTypingIndicator();
             
             // Add bot response
+            console.log('🔤 About to add bot message:', botResponse);
             this.addMessage(botResponse, 'bot');
 
         } catch (error) {
@@ -226,11 +250,13 @@ class Chatbot {
     }
 
     addMessage(text, sender) {
+        console.log(`📝 Adding message - Sender: ${sender}, Text: "${text}"`);
         const messageDiv = document.createElement('div');
         messageDiv.className = `chatbot-message ${sender}`;
         messageDiv.textContent = text;
         
         this.chatbotMessages.appendChild(messageDiv);
+        console.log('✅ Message added to DOM');
         this.scrollToBottom();
     }
 
