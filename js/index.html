@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshay Sayar - Professional Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">AS</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">Hi, I'm</span>
+                        <span class="title-name">Akshay Sayar</span>
+                    </h1>
+                    <h2 class="hero-subtitle">AI Engineer • Data Scientist • Software Engineer</h2>
+                    <!-- <p class="hero-description">
+                        I play with code and AI to build smart, meaningful solutions. I'm a technophile at heart and a passionate learner with 7.5+ years of experience. I aspire to be a philanthropist — using technology to improve lives, especially for children, and to drive positive, lasting impact through innovation.
+                    </p>
+                    <div class="hero-highlights">
+                        <div class="hero-highlight">
+                            <i class="fas fa-brain"></i>
+                            <span>AI & Machine Learning Expert</span>
+                        </div>
+                        <div class="hero-highlight">
+                            <i class="fas fa-heart"></i>
+                            <span>Passionate About Children's Education</span>
+                        </div>
+                    </div> -->
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                        <a href="#experience" class="btn btn-secondary">View Work</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <div class="profile-image">
+                            <img src="images/formal_dp_blazer.jpg" alt="Akshay Sayar" class="profile-photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate about technology and meaningful impact</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I play with code and AI to build smart, meaningful solutions. I'm a technophile at heart and a passionate learner with 7.5+ years of experience as a Data Scientist, AI Engineer, Software Engineer, Data Engineer.</p>
+                    <p>I aspire to be a philanthropist — using technology to improve lives, especially for children, and to drive positive, lasting impact through innovation.</p>
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <i class="fas fa-brain"></i>
+                            <span>AI & Machine Learning Expert</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-heart"></i>
+                            <span>Passionate About Children's Education</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-globe"></i>
+                            <span>International Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="skills-preview">
+                        <div class="skill-bar">
+                            <span class="skill-name">Python</span>
+                            <div class="progress"><div class="progress-fill" data-skill="95"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Machine Learning</span>
+                            <div class="progress"><div class="progress-fill" data-skill="90"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">AI/LLMs</span>
+                            <div class="progress"><div class="progress-fill" data-skill="88"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Data Science</span>
+                            <div class="progress"><div class="progress-fill" data-skill="92"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Journey</h2>
+                <p class="section-subtitle">7.5+ years of building intelligent solutions</p>
+            </div>
+            <div class="timeline">
+                <!-- Software Engineer at Propylon -->
+                <div class="timeline-item" data-expandable="true">
+                    <div class="timeline-dot work"></div>
+                    <div class="timeline-date">
+                        <span class="date-badge work">Nov 2022 - July 2025</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="job-header">
+                            <h3 class="job-title">Software Engineer</h3>
+                            <div class="company">Propylon • Dublin, Ireland</div>
+                            <div class="expand-indicator">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="job-details">
+                            <div class="job-description">
+                                <ul>
+                                    <li>Developed a conversational Retrieval-Augmented Generation (RAG) system using LangGraph and Claude Sonnet LLM</li>
+                                    <li>Designed custom indexing and retrieval algorithm integrated with OpenSearch</li>
+                                    <li>Engineered dynamic query understanding for document search optimization</li>
+                                    <li>Built intelligent query rewriting and source document reranking systems</li>
+                                    <li>Applied Guardrails to enforce output safety and prevent hallucinations</li>
+                                    <li>Developed ML model for law classification using Zero-shot classification</li>
+                                    <li>Built comprehensive legal timeline system processing XML data with NLP and ML</li>
+                                    <li>Automated CI/CD pipeline using GitHub Actions</li>
+                                    <li>Deployed systems to AWS Cloud for production scalability</li>
+                                    <li>Mentored Trinity College students on AI projects for 3 years</li>
+                                    <li>Volunteered teaching math and programming to third-grade students</li>
+                                </ul>
+                            </div>
+                            <div class="job-tags">
+                                <span class="tag">LangGraph</span>
+                                <span class="tag">RAG</span>
+                                <span class="tag">AWS</span>
+                                <span class="tag">NLP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ML Engineer at Ultrasound Ireland -->
+                <div class="timeline-item" data-expandable="true">
+                    <div class="timeline-dot work"></div>
+                    <div class="timeline-date">
+                        <span class="date-badge work">Feb 2022 - June 2022</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="job-header">
+                            <h3 class="job-title">Machine Learning Engineer</h3>
+                            <div class="company">Ultrasound Ireland • Dublin, Ireland</div>
+                            <div class="expand-indicator">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="job-details">
+                            <div class="job-description">
+                                <ul>
+                                    <li>OCR automation for hospital form data entry into SQL databases</li>
+                                    <li>Trained YOLO V5 model for special marking technique recognition</li>
+                                    <li>Custom trained Azure Form Recognizer for high accuracy form processing</li>
+                                    <li>Ensemble AWS Textract, Azure Form Recognizer and transfer learned YOLO V5</li>
+                                    <li>Used open-source Tesseract for form classification</li>
+                                    <li>Created comprehensive API for the product</li>
+                                </ul>
+                            </div>
+                            <div class="job-tags">
+                                <span class="tag">YOLO V5</span>
+                                <span class="tag">Azure</span>
+                                <span class="tag">OCR</span>
+                                <span class="tag">Computer Vision</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Master's Degree -->
+                <div class="timeline-item" data-expandable="true">
+                    <div class="timeline-dot study"></div>
+                    <div class="timeline-date">
+                        <span class="date-badge study">Sep 2021 - Oct 2022</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="job-header">
+                            <h3 class="job-title">Master of Science in Data Analytics</h3>
+                            <div class="company">National College of Ireland • Dublin, Ireland</div>
+                            <div class="expand-indicator">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="job-details">
+                            <div class="job-description">
+                                <ul>
+                                    <li>Graduated with First Class Honors (1:1)</li>
+                                    <li>Built ML Framework for predicting Empathy using eye tracking and Pupil Dilation</li>
+                                    <li>Included in the Dean's Honor's List for academic excellence</li>
+                                    <li>ENFUSE Competition - 3rd Position (Inter-College) and Winner (College Level)</li>
+                                </ul>
+                            </div>
+                            <div class="job-tags">
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">Computer Vision</span>
+                                <span class="tag">Research</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Scientist at GS Lab -->
+                <div class="timeline-item" data-expandable="true">
+                    <div class="timeline-dot work"></div>
+                    <div class="timeline-date">
+                        <span class="date-badge work">Dec 2019 - Aug 2021</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="job-header">
+                            <h3 class="job-title">Data Scientist</h3>
+                            <div class="company">GS Lab • Pune, India</div>
+                            <div class="expand-indicator">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="job-details">
+                            <div class="job-description">
+                                <ul>
+                                    <li>Worked closely with IBM Watson AIOps research team</li>
+                                    <li>Trained and fine-tuned AIOps models on IBM cloud</li>
+                                    <li>Led team building Network Intrusion Detection System using ML</li>
+                                    <li>Trained various ML models: RandomForest, XGBoost, SVM, Logistic regression</li>
+                                    <li>Built real-time network intrusion detection application</li>
+                                    <li>Developed Anomaly detection system for IoT devices</li>
+                                    <li>Applied time series models: Holt Winter, SARIMA, GRU, LSTM</li>
+                                    <li>Created stacked LSTM model with highest accuracy</li>
+                                    <li>Led team of 4 building multi-threaded RFID-to-IBM Cloud system</li>
+                                </ul>
+                            </div>
+                            <div class="job-tags">
+                                <span class="tag">IBM Watson</span>
+                                <span class="tag">AIOps</span>
+                                <span class="tag">Network Security</span>
+                                <span class="tag">IoT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Scientist at Cognizant -->
+                <div class="timeline-item" data-expandable="true">
+                    <div class="timeline-dot work"></div>
+                    <div class="timeline-date">
+                        <span class="date-badge work">Feb 2021 - Nov 2021</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="job-header">
+                            <h3 class="job-title">Data Scientist</h3>
+                            <div class="company">Cognizant • Pune, India</div>
+                            <div class="expand-indicator">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="job-details">
+                            <div class="job-description">
+                                <ul>
+                                    <li>Worked for Banking client projects</li>
+                                    <li>Created interactive data visualizations and dashboards in Power BI</li>
+                                    <li>Developed backend API for data extraction from Hive Database</li>
+                                    <li>Conducted A/B testing of machine learning models</li>
+                                </ul>
+                            </div>
+                            <div class="job-tags">
+                                <span class="tag">Power BI</span>
+                                <span class="tag">Banking</span>
+                                <span class="tag">Data Visualization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QA Automation Engineer -->
+                <div class="timeline-item" data-expandable="true">
+                    <div class="timeline-dot work"></div>
+                    <div class="timeline-date">
+                        <span class="date-badge work">Nov 2019 - Feb 2021</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="job-header">
+                            <h3 class="job-title">QA Automation Engineer</h3>
+                            <div class="company">Cognizant • Pune, India</div>
+                            <div class="expand-indicator">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="job-details">
+                            <div class="job-description">
+                                <ul>
+                                    <li>Handled multiple testing projects for Banking client</li>
+                                    <li>Created end-to-end generic Regression Script using Python and MS Excel</li>
+                                    <li>Automated testing scenarios using Python and ROBOT Framework</li>
+                                    <li>Responsible for QA signoff for multiple applications</li>
+                                    <li>Represented RBC project in Innovation competition</li>
+                                </ul>
+                            </div>
+                            <div class="job-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Automation</span>
+                                <span class="tag">ROBOT Framework</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bachelor's Degree -->
+                <div class="timeline-item" data-expandable="true">
+                    <div class="timeline-dot study"></div>
+                    <div class="timeline-date">
+                        <span class="date-badge study">July 2012 - June 2016</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="job-header">
+                            <h3 class="job-title">Bachelor of Engineering, Mechanical Engineering</h3>
+                            <div class="company">University of Pune • Pune, India</div>
+                            <div class="expand-indicator">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="job-details">
+                            <div class="job-description">
+                                <ul>
+                                    <li>Graduated with First Class with Distinction</li>
+                                    <li>Designed and Built Compressed Air Engine</li>
+                                </ul>
+                            </div>
+                            <div class="job-tags">
+                                <span class="tag">Engineering</span>
+                                <span class="tag">Innovation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">Technologies and tools I work with</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI & Machine Learning</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">TensorFlow</span>
+                        <span class="skill-item">PyTorch</span>
+                        <span class="skill-item">scikit-learn</span>
+                        <span class="skill-item">XGBoost</span>
+                        <span class="skill-item">YOLO</span>
+                        <span class="skill-item">LangGraph</span>
+                        <span class="skill-item">Transformers</span>
+                        <span class="skill-item">Hugging Face</span>
+                        <span class="skill-item">OpenCV</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-database"></i>
+                        <h3>Data Science & Analytics</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-item">Pandas</span>
+                        <span class="skill-item">NumPy</span>
+                        <span class="skill-item">Matplotlib</span>
+                        <span class="skill-item">Seaborn</span>
+                        <span class="skill-item">SQL</span>
+                        <span class="skill-item">Power BI</span>
+                        <span class="skill-item">Hive</span>
+                        <span class="skill-item">PySpark</span>
+                        <span class="skill-item">Jupyter</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Cloud & DevOps</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-item">AWS</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Terraform</span>
+                        <span class="skill-item">GitHub Actions</span>
+                        <span class="skill-item">Jenkins</span>
+                        <span class="skill-item">Linux</span>
+                        <span class="skill-item">Ubuntu</span>
+                        <span class="skill-item">OpenSearch</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Development</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-item">Django</span>
+                        <span class="skill-item">Flask</span>
+                        <span class="skill-item">FastAPI</span>
+                        <span class="skill-item">HTML/CSS</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">REST APIs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Innovative solutions I've built</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">ML Framework for Empathy Prediction</h3>
+                        <p class="project-date">August 2022</p>
+                        <p class="project-description">
+                            Developed a machine learning framework to predict empathy using eye-tracking and pupil dilation data, integrating deep learning tools (ELLSEG, YOLOv5, dlib) and psychological analysis. Achieved 89% accuracy using Logistic Regression.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Psychology</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Free Canvas AR Drawing Tool</h3>
+                        <p class="project-date">February 2022</p>
+                        <p class="project-description">
+                            Free Canvas (Augmented Reality) is a drawing tool for children of age 2-8 where they can interact with webcam and draw figures by joining dots and improving creativity. Works by recognizing hand and finger points.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Augmented Reality</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Education</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Agentic Chatbot Assistant</h3>
+                        <p class="project-date">March 2021</p>
+                        <p class="project-description">
+                            Designed and created a chatbot for personal use which can perform certain tasks on Ubuntu OS. The data was made from scratch, and the model was trained on the data. Features speech-to-text module from google.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">NLP</span>
+                            <span class="tag">Speech Recognition</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Snake Game with Random Forest</h3>
+                        <p class="project-date">January 2021</p>
+                        <p class="project-description">
+                            Designed and built a snake game on Webcam's screen where you can see yourself (like a mirror) and the snake playing the game itself. Random Forest gave the best accuracy. Data for training was generated from scratch by playing 100 games manually.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Random Forest</span>
+                            <span class="tag">Game AI</span>
+                            <span class="tag">Computer Vision</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's create something amazing together</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>akshaysayar@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+353 89 966 6388</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Dublin, Ireland</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/akshay-sayar/" target="_blank">linkedin.com/in/akshay-sayar</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/akshaysayar" target="_blank">github.com/akshaysayar</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Akshay Sayar. All rights reserved. Built with passion for meaningful impact.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/akshay-sayar/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/akshaysayar" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <!-- Chatbot Arrow Indicator -->
+        <div class="chatbot-arrow" id="chatbotArrow">
+            <div class="arrow-text">
+                <span>ask</span>
+                <span>me</span>
+                <span>anything</span>
+            </div>
+            <div class="arrow-pointer">↓</div>
+        </div>
+        
+        <button class="chatbot-button" id="chatbotButton">
+            🤖
+        </button>
+        
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3>🤖 AI Assistant</h3>
+                <button class="chatbot-close" id="chatbotClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="chatbot-message bot">
+                    👋 Hi! I'm Akshay's AI assistant. I can help you learn more about his experience, skills, and projects. What would you like to know?
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Ask me anything about Akshay..." maxlength="500">
+                <button class="chatbot-send" id="chatbotSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
