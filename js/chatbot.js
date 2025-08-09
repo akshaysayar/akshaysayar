@@ -232,6 +232,8 @@ class Chatbot {
                 errorMessage = "Request timed out. The backend might be starting up (this can take 30-60 seconds on free hosting). Please try again.";
             } else if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
                 errorMessage = "Network error. Please check your connection and try again.";
+            } else if (error.message.includes('CORS') || error.message.includes('cross-origin')) {
+                errorMessage = "CORS error detected. The backend needs to be configured to allow requests from this domain.";
             } else {
                 errorMessage = "I'm having trouble connecting to my backend. Let me use my offline knowledge instead.";
             }
