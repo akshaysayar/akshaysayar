@@ -1,8 +1,8 @@
 class Chatbot {
     constructor() {
         // For static websites - no server needed
-        this.isStatic = true; // Set to false if you want to use the server
-        this.apiUrl = 'http://localhost:3001/api/chat'; // Only used if isStatic = false
+        this.isStatic = false; // Set to false if you want to use the server
+        this.apiUrl = 'https://akshay-cv-backend.onrender.com/chat'; // Only used if isStatic = false
         this.isOpen = false;
         this.arrowShown = true;
         this.init();
